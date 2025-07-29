@@ -4,10 +4,12 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 
-public class SpecialDateChecker {
+public class SalaryDateChecker {
 
     /**
-     * Повертає дату другого робочого дня місяця
+     * Отримати дату зарплати (2-й робочий день місяця).
+     * @param date Дата (місяць), для якої потрібно виконати перевірку
+     * @return Дата зарплати
      */
     public static LocalDate getSecondWorkingDayOfMonth(LocalDate date) {
         if (date == null) {
@@ -28,7 +30,10 @@ public class SpecialDateChecker {
     }
 
     /**
-     * Отримати дату найближчого робочого дня.
+     * Отримати дату найближчого робочого дня до заданої дати.
+     * @param date Дата (місяць), для якої потрібно виконати перевірку
+     * @param dayOfMonth День місяця, до якого потрібно знайти найближчий робочий день
+     * @return Дата найближчого робочого дня
      */
     public static LocalDate getClosestWorkingDay(LocalDate date, int dayOfMonth) {
         if (date == null) {
@@ -42,7 +47,9 @@ public class SpecialDateChecker {
     }
 
     /**
-     * Допоміжна функція для перевірки, чи є дата робочим днем.
+     * Перевірити, чи є дата робочим днем.
+     * @param date Дата для перевірки
+     * @return true, якщо дата є робочим днем, false - в іншому випадку
      */
     public static boolean isWorkingDay(LocalDate date) {
         if (date == null) {
